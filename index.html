@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Unidades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">UNIDADES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>DENSIDAD KG/M3</td>
+                        <td><input type="number" id="densidad" value="430"></td>
+                    </tr>
+                    <tr>
+                        <td>SM3/MMBTU</td>
+                        <td><input type="number" id="sm3_mmbtu" value="27.31"></td>
+                    </tr>
+                    <tr>
+                        <td>SM3 / M3GNL</td>
+                        <td><input type="number" id="sm3_m3gnl" value="608"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">VALORES VARIABLES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>KG GNL</td>
+                        <td><input type="number" id="kg_gnl"></td>
+                    </tr>
+                    <tr>
+                        <td>M3 GNL</td>
+                        <td><input type="number" id="m3_gnl"></td>
+                    </tr>
+                    <tr>
+                        <td>KG GN</td>
+                        <td><input type="number" id="kg_gn"></td>
+                    </tr>
+                    <tr>
+                        <td>M3 GN</td>
+                        <td><input type="number" id="m3_gn"></td>
+                    </tr>
+                    <tr>
+                        <td>MMBTU</td>
+                        <td><input type="number" id="mmbtu"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="button-container">
+            <button id="calcular">CALCULAR</button>
+            <button id="limpiar">LIMPIAR</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
