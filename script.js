@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const CLAVE_ACCESO = "engie2025"; 
+
+    const claveIngresada = prompt("Por favor, ingrese la clave de acceso:");
+
+    if (claveIngresada === CLAVE_ACCESO) {
+        document.body.style.display = 'flex';
+        alert("Acceso concedido. ¡Bienvenido!");
+    } else {
+        alert("Clave incorrecta. Acceso denegado.");
+        window.location.href = "about:blank";
+    }
+
     const calcularBtn = document.getElementById('calcular');
     const limpiarBtn = document.getElementById('limpiar');
     const verLinksBtn = document.getElementById('ver_links');
