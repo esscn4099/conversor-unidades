@@ -27,11 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // El resto del código de la aplicación (cálculo y enlaces)
+    // Código nuevo para la funcionalidad de la barra lateral
+    const collapsibleBtn = document.getElementById('ver_links');
+    const linksContainer = document.getElementById('links-container');
+
+    collapsibleBtn.addEventListener('click', () => {
+        linksContainer.classList.toggle('open');
+        collapsibleBtn.classList.toggle('open');
+    });
+
+    // El resto del código de la aplicación (cálculo)
     const calcularBtn = document.getElementById('calcular');
     const limpiarBtn = document.getElementById('limpiar');
-    const verLinksBtn = document.getElementById('ver_links');
-    const linksContainer = document.getElementById('links-container');
 
     const inputs = {
         densidad: document.getElementById('densidad'),
@@ -119,12 +126,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     calcularBtn.addEventListener('click', calcular);
     limpiarBtn.addEventListener('click', limpiar);
-    
-    verLinksBtn.addEventListener('click', () => {
-        if (linksContainer.classList.contains('hidden')) {
-            linksContainer.classList.remove('hidden');
-        } else {
-            linksContainer.classList.add('hidden');
-        }
-    });
 });
