@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const calcularBtn = document.getElementById('calcular');
     const limpiarBtn = document.getElementById('limpiar');
-    const verLinksBtn = document.getElementById('ver_links');
-    const linksContainer = document.getElementById('links-container');
+    const verLinksBtn = document.getElementById('ver_links'); // El botón "VER ENLACES QR"
+    const linksContainer = document.getElementById('links-container'); // El contenedor de los links
 
     const inputs = {
         densidad: document.getElementById('densidad'),
@@ -117,11 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
     calcularBtn.addEventListener('click', calcular);
     limpiarBtn.addEventListener('click', limpiar);
     
+    // Aquí está la funcionalidad corregida del botón "VER ENLACES QR"
     verLinksBtn.addEventListener('click', () => {
-        if (linksContainer.classList.contains('hidden')) {
-            linksContainer.classList.remove('hidden');
-        } else {
-            linksContainer.classList.add('hidden');
-        }
+        linksContainer.classList.toggle('hidden');
     });
 });
