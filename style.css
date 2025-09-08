@@ -9,7 +9,7 @@ body {
     color: #333;
     padding: 20px;
     box-sizing: border-box;
-    flex-direction: column; /* Permite que los elementos se apilen */
+    flex-direction: column; 
 }
 
 #login-container {
@@ -20,6 +20,8 @@ body {
     text-align: center;
     width: 90%;
     max-width: 400px;
+    /* Aseguramos que el login esté al frente */
+    z-index: 10;
 }
 
 #login-container h2 {
@@ -51,7 +53,8 @@ body {
 }
 
 .hidden {
-    display: none;
+    /* Nueva regla para ocultar completamente los elementos */
+    display: none !important;
 }
 
 .container {
