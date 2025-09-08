@@ -1,95 +1,171 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const calcularBtn = document.getElementById('calcular');
-    const limpiarBtn = document.getElementById('limpiar');
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #ece9e6, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
-    const inputs = {
-        densidad: document.getElementById('densidad'),
-        sm3_mmbtu: document.getElementById('sm3_mmbtu'),
-        sm3_m3gnl: document.getElementById('sm3_m3gnl'),
-        kg_gnl: document.getElementById('kg_gnl'),
-        m3_gnl: document.getElementById('m3_gnl'),
-        kg_gn: document.getElementById('kg_gn'),
-        m3_gn: document.getElementById('m3_gn'),
-        mmbtu: document.getElementById('mmbtu')
-    };
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
 
-    const formatNumber = (num) => {
-        return num.toFixed(2);
-    };
+.table-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
 
-    const calcular = () => {
-        let valKGGNL, valM3GNL, valKGGN, valM3GN, valMMBTU;
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
 
-        const Densidad = parseFloat(inputs.densidad.value) || 430;
-        const SM3_MMBTU = parseFloat(inputs.sm3_mmbtu.value) || 27.31;
-        const SM3_M3GNL = parseFloat(inputs.sm3_m3gnl.value) || 608;
+th, td {
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: middle;
+}
 
-        const kg_gnl_val = parseFloat(inputs.kg_gnl.value);
-        const m3_gnl_val = parseFloat(inputs.m3_gnl.value);
-        const kg_gn_val = parseFloat(inputs.kg_gn.value);
-        const m3_gn_val = parseFloat(inputs.m3_gn.value);
-        const mmbtu_val = parseFloat(inputs.mmbtu.value);
+th {
+    background-color: #f0f8ff;
+    font-weight: 600;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
-        // Limpiar campos de salida antes de calcular
-        limpiarCamposSalida();
+tr:nth-child(even) {
+    background-color: #fdfefe;
+}
 
-        if (!isNaN(m3_gnl_val)) {
-            valM3GNL = m3_gnl_val;
-            valKGGNL = valM3GNL * Densidad;
-            valKGGN = valKGGNL;
-            valM3GN = valM3GNL * SM3_M3GNL;
-            valMMBTU = valM3GN / SM3_MMBTU;
-        } else if (!isNaN(kg_gnl_val)) {
-            valKGGNL = kg_gnl_val;
-            valM3GNL = valKGGNL / Densidad;
-            valKGGN = valKGGNL;
-            valM3GN = valM3GNL * SM3_M3GNL;
-            valMMBTU = valM3GN / SM3_MMBTU;
-        } else if (!isNaN(mmbtu_val)) {
-            valMMBTU = mmbtu_val;
-            valM3GN = valMMBTU * SM3_MMBTU;
-            valM3GNL = valM3GN / SM3_M3GNL;
-            valKGGNL = valM3GNL * Densidad;
-            valKGGN = valKGGNL;
-        } else if (!isNaN(m3_gn_val)) {
-            valM3GN = m3_gn_val;
-            valM3GNL = valM3GN / SM3_M3GNL;
-            valKGGNL = valM3GNL * Densidad;
-            valKGGN = valKGGNL;
-            valMMBTU = valM3GN / SM3_MMBTU;
-        } else if (!isNaN(kg_gn_val)) {
-            valKGGN = kg_gn_val;
-            valKGGNL = valKGGN;
-            valM3GNL = valKGGNL / Densidad;
-            valM3GN = valM3GNL * SM3_M3GNL;
-            valMMBTU = valM3GN / SM3_MMBTU;
-        } else {
-            alert("Por favor, ingrese un valor en al menos un campo para convertir.");
-            return;
-        }
+tr:hover {
+    background-color: #f5f5f5;
+}
 
-        // Mostrar resultados
-        if (isNaN(m3_gnl_val)) inputs.m3_gnl.value = formatNumber(valM3GNL);
-        if (isNaN(kg_gnl_val)) inputs.kg_gnl.value = formatNumber(valKGGNL);
-        if (isNaN(kg_gn_val)) inputs.kg_gn.value = formatNumber(valKGGN);
-        if (isNaN(m3_gn_val)) inputs.m3_gn.value = formatNumber(valM3GN);
-        if (isNaN(mmbtu_val)) inputs.mmbtu.value = formatNumber(valMMBTU);
-    };
+input[type="number"] {
+    width: calc(100% - 10px);
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
 
-    const limpiar = () => {
-        inputs.kg_gnl.value = '';
-        inputs.m3_gnl.value = '';
-        inputs.kg_gn.value = '';
-        inputs.m3_gn.value = '';
-        inputs.mmbtu.value = '';
-    };
+input[type="number"]:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
 
-    const limpiarCamposSalida = () => {
-        // Esta función podría ser más sofisticada para limpiar solo los campos que no son de entrada
-        // Por ahora, se limpian todos los campos de valores variables.
-        limpiar();
-    };
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
 
-    calcularBtn.addEventListener('click', calcular);
-    limpiarBtn.addEventListener('click', limpiar);
-});
+button {
+    padding: 15px 35px;
+    font-size: 1.1em;
+    font-weight: 700;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.links-section {
+    margin-bottom: 20px;
+}
+
+.links-section h3 {
+    background-color: #f0f8ff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #2c3e50;
+    border-left: 5px solid #007bff;
+}
+
+.links-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-section li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.links-section li:last-child {
+    border-bottom: none;
+}
+
+.links-section a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.links-section a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    th, td {
+        padding: 10px 12px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    th, td {
+        font-size: 0.9em;
+    }
+
+    input[type="number"] {
+        font-size: 0.9em;
+    }
+}
