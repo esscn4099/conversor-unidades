@@ -82,6 +82,27 @@ body {
     display: none !important;
 }
 
+.banner-container {
+    background-color: var(--primary-color);
+    color: #fff;
+    width: 100%;
+    max-width: 720px;
+    text-align: center;
+    padding: 16px 20px;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: -30px; /* Para que se superponga ligeramente con el contenedor de abajo */
+    z-index: 1; /* Asegura que el banner esté encima del contenedor */
+    position: relative;
+}
+
+.banner-container h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
 .container {
     background-color: #fff;
     padding: 40px;
@@ -231,5 +252,11 @@ button:hover {
     }
     th, td {
         padding: 12px 16px;
+    }
+    .links-section h3 {
+        font-size: 18px;
+    }
+    .links-section a {
+        font-size: 14px;
     }
 }
