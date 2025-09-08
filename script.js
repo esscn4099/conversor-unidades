@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
     // El resto del código de la aplicación (cálculo y enlaces)
     const calcularBtn = document.getElementById('calcular');
     const limpiarBtn = document.getElementById('limpiar');
