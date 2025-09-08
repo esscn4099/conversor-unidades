@@ -7,38 +7,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorMessage = document.getElementById('error-message');
     const mainContent = document.getElementById('main-content');
     
-    // Función para manejar el inicio de sesión
     const handleLogin = () => {
         if (passwordInput.value === CLAVE_ACCESO) {
             loginContainer.classList.add('hidden');
             mainContent.classList.remove('hidden');
         } else {
             errorMessage.classList.remove('hidden');
-            passwordInput.value = ''; // Limpiar el campo
+            passwordInput.value = '';
         }
     };
     
     loginBtn.addEventListener('click', handleLogin);
     
-    // Permitir ingresar con la tecla Enter
     passwordInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             handleLogin();
         }
     });
 
-    // Código nuevo para la funcionalidad de la barra lateral
-    const collapsibleBtn = document.getElementById('ver_links');
-    const linksContainer = document.getElementById('links-container');
-
-    collapsibleBtn.addEventListener('click', () => {
-        linksContainer.classList.toggle('open');
-        collapsibleBtn.classList.toggle('open');
-    });
-
-    // El resto del código de la aplicación (cálculo)
     const calcularBtn = document.getElementById('calcular');
     const limpiarBtn = document.getElementById('limpiar');
+    const verLinksBtn = document.getElementById('ver_links');
+    const linksContainer = document.getElementById('links-container');
 
     const inputs = {
         densidad: document.getElementById('densidad'),
@@ -126,4 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     calcularBtn.addEventListener('click', calcular);
     limpiarBtn.addEventListener('click', limpiar);
+    
+    verLinksBtn.addEventListener('click', () => {
+        if (linksContainer.classList.contains('hidden')) {
+            linksContainer.classList.remove('hidden');
+        } else {
+            linksContainer.classList.add('hidden');
+        }
+    });
 });
