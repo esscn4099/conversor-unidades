@@ -1,16 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
     const CLAVE_ACCESO = "engie2025"; 
 
-    const claveIngresada = prompt("Por favor, ingrese la clave de acceso:");
+    const loginContainer = document.getElementById('login-container');
+    const passwordInput = document.getElementById('password-input');
+    const loginBtn = document.getElementById('login-btn');
+    const errorMessage = document.getElementById('error-message');
+    const mainContent = document.getElementById('main-content');
+    
+    // Función para manejar el inicio de sesión
+    const handleLogin = () => {
+        if (passwordInput.value === CLAVE_ACCESO) {
+            loginContainer.classList.add('hidden');
+            mainContent.classList.remove('hidden');
+        } else {
+            errorMessage.classList.remove('hidden');
+            passwordInput.value = ''; // Limpiar el campo
+        }
+    };
+    
+    loginBtn.addEventListener('click', handleLogin);
+    
+    // Permitir ingresar con la tecla Enter
+    passwordInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            handleLogin();
+        }
+    });
 
-    if (claveIngresada === CLAVE_ACCESO) {
-        document.body.style.display = 'flex';
-        alert("Acceso concedido. ¡Bienvenido!");
-    } else {
-        alert("Clave incorrecta. Acceso denegado.");
-        window.location.href = "about:blank";
-    }
 
+    // El resto del código de la aplicación (cálculo y enlaces)
     const calcularBtn = document.getElementById('calcular');
     const limpiarBtn = document.getElementById('limpiar');
     const verLinksBtn = document.getElementById('ver_links');
@@ -104,10 +122,10 @@ document.addEventListener('DOMContentLoaded', () => {
     limpiarBtn.addEventListener('click', limpiar);
     
     verLinksBtn.addEventListener('click', () => {
-        if (linksContainer.style.display === 'none') {
-            linksContainer.style.display = 'block';
+        if (linksContainer.classList.contains('hidden')) {
+            linksContainer.classList.remove('hidden');
         } else {
-            linksContainer.style.display = 'none';
+            linksContainer.classList.add('hidden');
         }
     });
 });
