@@ -1,32 +1,32 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #ece9e6, #ffffff); /* Fondo degradado suave */
+    background: linear-gradient(to right, #ece9e6, #ffffff);
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Asegura que ocupe al menos el alto de la ventana */
+    min-height: 100vh;
     margin: 0;
     color: #333;
-    padding: 20px; /* Espaciado general */
-    box-sizing: border-box; /* Incluye padding en el tamaño total */
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    gap: 30px; /* Mayor espacio entre los elementos */
-    background-color: #ffffff; /* Fondo blanco para el contenedor principal */
+    gap: 30px;
+    background-color: #ffffff;
     padding: 30px;
-    border-radius: 15px; /* Bordes más redondeados */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
-    max-width: 600px; /* Ancho máximo para el contenedor */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
     width: 100%;
 }
 
 .table-container {
-    border-radius: 10px; /* Bordes redondeados para cada tabla */
-    overflow: hidden; /* Para que los bordes redondeados se apliquen al contenido */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave para las tablas */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 table {
@@ -35,46 +35,46 @@ table {
 }
 
 th, td {
-    border: 1px solid #e0e0e0; /* Bordes más suaves */
-    padding: 12px 15px; /* Mayor padding */
+    border: 1px solid #e0e0e0;
+    padding: 12px 15px;
     text-align: left;
     vertical-align: middle;
 }
 
 th {
-    background-color: #f0f8ff; /* Azul muy claro para los encabezados */
-    font-weight: 600; /* Un poco más de peso a la fuente */
-    color: #2c3e50; /* Color de texto oscuro para contraste */
-    text-transform: uppercase; /* Mayúsculas para los títulos */
-    letter-spacing: 0.5px; /* Espaciado entre letras */
+    background-color: #f0f8ff;
+    font-weight: 600;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 tr:nth-child(even) {
-    background-color: #fdfefe; /* Rayas sutiles para filas pares */
+    background-color: #fdfefe;
 }
 
 tr:hover {
-    background-color: #f5f5f5; /* Efecto hover en las filas */
+    background-color: #f5f5f5;
 }
 
 input[type="number"] {
-    width: calc(100% - 10px); /* Ancho completo menos padding */
+    width: calc(100% - 10px);
     padding: 8px;
-    border: 1px solid #ced4da; /* Borde más estético */
-    border-radius: 5px; /* Bordes redondeados para inputs */
+    border: 1px solid #ced4da;
+    border-radius: 5px;
     font-size: 1em;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transición para focus */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input[type="number"]:focus {
-    border-color: #80bdff; /* Color de borde al enfocar */
-    outline: none; /* Elimina el contorno por defecto */
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra suave al enfocar */
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .button-container {
     display: flex;
-    flex-wrap: wrap; /* Permite que los botones se envuelvan en pantallas pequeñas */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     margin-top: 20px;
@@ -82,29 +82,68 @@ input[type="number"]:focus {
 
 button {
     padding: 15px 35px;
-    font-size: 1.1em; /* Un poco más grande */
+    font-size: 1.1em;
     font-weight: 700;
     color: white;
-    background-color: #007bff; /* Azul primario */
+    background-color: #007bff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Sombra para botones */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
 
 button:hover {
-    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
-    transform: translateY(-2px); /* Pequeño efecto de elevación */
-    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4); /* Sombra más intensa */
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
 }
 
 button:active {
-    transform: translateY(0); /* Vuelve a su posición al hacer clic */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra más pequeña */
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Media Queries para Responsividad */
+.links-section {
+    margin-bottom: 20px;
+}
+
+.links-section h3 {
+    background-color: #f0f8ff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #2c3e50;
+    border-left: 5px solid #007bff;
+}
+
+.links-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.links-section li {
+    padding: 8px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.links-section li:last-child {
+    border-bottom: none;
+}
+
+.links-section a {
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.links-section a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 20px;
@@ -116,7 +155,7 @@ button:active {
     }
 
     button {
-        width: 100%; /* Botones de ancho completo en pantallas pequeñas */
+        width: 100%;
         padding: 12px 25px;
     }
 }
@@ -129,5 +168,4 @@ button:active {
     input[type="number"] {
         font-size: 0.9em;
     }
-
 }
