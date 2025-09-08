@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de Unidades</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 
@@ -16,114 +17,103 @@
     </div>
 
     <div id="main-content" class="hidden">
-        <header id="main-header">
-            <div id="hero-image"></div>
-            <h1>Conversor de Unidades de Gas Natural</h1>
-        </header>
+        <div class="container">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2">UNIDADES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DENSIDAD KG/M3</td>
+                            <td><input type="number" id="densidad" value="430"></td>
+                        </tr>
+                        <tr>
+                            <td>SM3/MMBTU</td>
+                            <td><input type="number" id="sm3_mmbtu" value="27.31"></td>
+                        </tr>
+                        <tr>
+                            <td>SM3 / M3GNL</td>
+                            <td><input type="number" id="sm3_m3gnl" value="608"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <div class="main-layout">
-            <main>
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th colspan="2">UNIDADES</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>DENSIDAD KG/M3</td>
-                                <td><input type="number" id="densidad" value="430"></td>
-                            </tr>
-                            <tr>
-                                <td>SM3/MMBTU</td>
-                                <td><input type="number" id="sm3_mmbtu" value="27.31"></td>
-                            </tr>
-                            <tr>
-                                <td>SM3 / M3GNL</td>
-                                <td><input type="number" id="sm3_m3gnl" value="608"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2">VALORES VARIABLES</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>KG GNL</td>
+                            <td><input type="number" id="kg_gnl"></td>
+                        </tr>
+                        <tr>
+                            <td>M3 GNL</td>
+                            <td><input type="number" id="m3_gnl"></td>
+                        </tr>
+                        <tr>
+                            <td>KG GN</td>
+                            <td><input type="number" id="kg_gn"></td>
+                        </tr>
+                        <tr>
+                            <td>M3 GN</td>
+                            <td><input type="number" id="m3_gn"></td>
+                        </tr>
+                        <tr>
+                            <td>MMBTU</td>
+                            <td><input type="number" id="mmbtu"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="button-container">
+                <button id="calcular"><i class="fas fa-calculator"></i> CALCULAR</button>
+                <button id="limpiar"><i class="fas fa-eraser"></i> LIMPIAR</button>
+                <button id="ver_links"><i class="fas fa-link"></i> VER ENLACES QR</button>
+            </div>
+            
+            <div id="links-container" class="hidden">
+                <div class="links-section">
+                    <h3>Procedimientos de Seguridad</h3>
+                    <ul>
+                        <li><a href="https://drive.google.com/file/d/1DK8YyyuFeqX6qOj30S2u6Wzrm4sO0SpZ/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i> Procedimiento Operacional Plantas de GNL</a></li>
+                        <li><a href="https://drive.google.com/file/d/1MObvt7Bu-XS_kBXM_M-Qzk9a-zr-9NMG/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i> Procedimiento de Respuestas ante Emergencias</a></li>
+                        <li><a href="https://drive.google.com/file/d/13hfiJnnXDDmqWRvFx6emnujhR63C5xIN/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i> Procedimiento Descarga y Recepción GNL</a></li>
+                    </ul>
                 </div>
 
-                <div class="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th colspan="2">VALORES VARIABLES</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>KG GNL</td>
-                                <td><input type="number" id="kg_gnl"></td>
-                            </tr>
-                            <tr>
-                                <td>M3 GNL</td>
-                                <td><input type="number" id="m3_gnl"></td>
-                            </tr>
-                            <tr>
-                                <td>KG GN</td>
-                                <td><input type="number" id="kg_gn"></td>
-                            </tr>
-                            <tr>
-                                <td>M3 GN</td>
-                                <td><input type="number" id="m3_gn"></td>
-                            </tr>
-                            <tr>
-                                <td>MMBTU</td>
-                                <td><input type="number" id="mmbtu"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="links-section">
+                    <h3>Procedimientos de Trabajo</h3>
+                    <ul>
+                        <li><a href="https://docs.google.com/document/d/1-AWu52I_wxHUvv-xrvUybJJndAUMxNVT/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Procedimiento Operacional PSR</a></li>
+                        <li><a href="https://docs.google.com/document/d/1jBlINPR2q2qcyEE2cgfzvVT4MiNbes6U/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Procedimiento Operacional Puesta en Marcha</a></li>
+                        <li><a href="https://docs.google.com/document/d/10GGh-Ti6MI_yZVyEbaQA4f8LncjpAPRk/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Instructivo Operacional Fugas</a></li>
+                        <li><a href="https://docs.google.com/document/d/1coQQjGTiI0bKSGMb8uxMHSGf-nVEy3mD/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Instructivo Operacional Válvulas Manuales</a></li>
+                        <li><a href="https://docs.google.com/document/d/1honK2lGPJ-GNV51zAI9v5_qygD-iYXCn/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Instructivo Operacional Heater</a></li>
+                        <li><a href="https://docs.google.com/document/d/1_01iBWe6Le_-PHPzxH0rQ2boJgsAH85U/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Instructivo Operacional Gabinete Eléctrico</a></li>
+                        <li><a href="https://docs.google.com/document/d/1JEuAwCw4CsLKxViqEtMFkNLT4bvOjZw0/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Instructivo Operacional Detectores de Gases</a></li>
+                        <li><a href="https://docs.google.com/document/d/1PloXO2ShxZU_8Rt7r7KYw1o2HfIDtLk6/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Instructivo Operacional Válvulas Check</a></li>
+                        <li><a href="https://docs.google.com/document/d/1FSGjcimuSGb6aw_uq-tXx1T-M2g-HhSe/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Instructivo Operacional Instrumentación de Campo</a></li>
+                        <li><a href="https://docs.google.com/document/d/12kaYlU-ws9Yudssa-Y8cKLe5c9-FDEKh/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Instructivo Operacional Válvulas de Seguridad</a></li>
+                        <li><a href="https://docs.google.com/document/d/11rqTCg4XT-HSYjf2Yxbo_HiU8-utzyTd/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Instructivo Operacional Manipulación Odorante</a></li>
+                        <li><a href="https://docs.google.com/document/d/1N9jF1ZafWGAgX-8o_JlALdCtLHzUS8Rg/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Instructivo Operacional Bridas y Empaques</a></li>
+                        <li><a href="https://docs.google.com/document/d/1sZgdVm7H8E08FkvKxk7mexSOCHYbT42T/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Instructivo Operacional Instrumentos de Presión</a></li>
+                        <li><a href="https://docs.google.com/document/d/1qW_nMUAUMzWZckM7bbEifzXgkHjjDzmu/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Instructivo Operacional Extintores</a></li>
+                        <li><a href="https://docs.google.com/document/d/1n9pRcT0u2Y7J3T1SgrU-wZJfXJIerhAj/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank"><i class="fas fa-file-alt"></i> Instructivo Operacional Odorizador</a></li>
+                        <li><a href="https://drive.google.com/file/d/1qj30JAYaBY6oUD4yUpcMrOB3ko-wR5tn/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i> Instructivo Descarga CMSA 2.0</a></li>
+                        <li><a href="https://drive.google.com/file/d/1Non2CQi78WORDjHIIcmzwSoldPuuGkZ6/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i> Instructivo Descarga CMSA 2000</a></li>
+                        <li><a href="https://drive.google.com/file/d/1Qs0q61ZnC_2h3iBJVQL9FMtZh6vQRw7-/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i> Instructivo de Descarga Algorta</a></li>
+                    </ul>
                 </div>
-            </main>
-
-            <aside id="sidebar">
-                <div class="sidebar-section">
-                    <h3>Herramientas</h3>
-                    <button id="calcular">CALCULAR</button>
-                    <button id="limpiar">LIMPIAR</button>
-                </div>
-                
-                <div class="sidebar-section">
-                    <h3 id="ver_links" class="collapsible">Procedimientos y Enlaces <span class="arrow">▼</span></h3>
-                    <div id="links-container" class="links-content">
-                        <div class="links-group">
-                            <h4>Seguridad</h4>
-                            <ul>
-                                <li><a href="https://drive.google.com/file/d/1DK8YyyuFeqX6qOj30S2u6Wzrm4sO0SpZ/view?usp=sharing" target="_blank">Operacional Plantas de GNL</a></li>
-                                <li><a href="https://drive.google.com/file/d/1MObvt7Bu-XS_kBXM_M-Qzk9a-zr-9NMG/view?usp=sharing" target="_blank">Respuestas ante Emergencias</a></li>
-                                <li><a href="https://drive.google.com/file/d/13hfiJnnXDDmqWRvFx6emnujhR63C5xIN/view?usp=sharing" target="_blank">Descarga y Recepción GNL</a></li>
-                            </ul>
-                        </div>
-                        <div class="links-group">
-                            <h4>Trabajo</h4>
-                            <ul>
-                                <li><a href="https://docs.google.com/document/d/1-AWu52I_wxHUvv-xrvUybJJndAUMxNVT/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Operacional PSR</a></li>
-                                <li><a href="https://docs.google.com/document/d/1jBlINPR2q2qcyEE2cgfzvVT4MiNbes6U/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Puesta en Marcha</a></li>
-                                <li><a href="https://docs.google.com/document/d/10GGh-Ti6MI_yZVyEbaQA4f8LncjpAPRk/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Fugas</a></li>
-                                <li><a href="https://docs.google.com/document/d/1coQQjGTiI0bKSGMb8uxMHSGf-nVEy3mD/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Válvulas Manuales</a></li>
-                                <li><a href="https://docs.google.com/document/d/1honK2lGPJ-GNV51zAI9v5_qygD-iYXCn/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Heater</a></li>
-                                <li><a href="https://docs.google.com/document/d/1_01iBWe6Le_-PHPzxH0rQ2boJgsAH85U/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Gabinete Eléctrico</a></li>
-                                <li><a href="https://docs.google.com/document/d/1JEuAwCw4CsLKxViqEtMFkNLT4bvOjZw0/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Detectores de Gases</a></li>
-                                <li><a href="https://docs.google.com/document/d/1PloXO2ShxZU_8Rt7r7KYw1o2HfIDtLk6/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Válvulas Check</a></li>
-                                <li><a href="https://docs.google.com/document/d/1FSGjcimuSGb6aw_uq-tXx1T-M2g-HhSe/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Instrumentación de Campo</a></li>
-                                <li><a href="https://docs.google.com/document/d/12kaYlU-ws9Yudssa-Y8cKLe5c9-FDEKh/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Válvulas de Seguridad</a></li>
-                                <li><a href="https://docs.google.com/document/d/11rqTCg4XT-HSYjf2Yxbo_HiU8-utzyTd/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Manipulación Odorante</a></li>
-                                <li><a href="https://docs.google.com/document/d/1N9jF1ZafWGAgX-8o_JlALdCtLHzUS8Rg/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Bridas y Empaques</a></li>
-                                <li><a href="https://docs.google.com/document/d/1sZgdVm7H8E08FkvKxk7mexSOCHYbT42T/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Instrumentos de Presión</a></li>
-                                <li><a href="https://docs.google.com/document/d/1qW_nMUAUMzWZckM7bbEifzXgkHjjDzmu/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Extintores</a></li>
-                                <li><a href="https://docs.google.com/document/d/1n9pRcT0u2Y7J3T1SgrU-wZJfXJIerhAj/edit?usp=sharing&ouid=117027693473315858366&rtpof=true&sd=true" target="_blank">Odorizador</a></li>
-                                <li><a href="https://drive.google.com/file/d/1qj30JAYaBY6oUD4yUpcMrOB3ko-wR5tn/view?usp=sharing" target="_blank">Descarga CMSA 2.0</a></li>
-                                <li><a href="https://drive.google.com/file/d/1Non2CQi78WORDjHIIcmzwSoldPuuGkZ6/view?usp=sharing" target="_blank">Descarga CMSA 2000</a></li>
-                                <li><a href="https://drive.google.com/file/d/1Qs0q61ZnC_2h3iBJVQL9FMtZh6vQRw7-/view?usp=sharing" target="_blank">Descarga Algorta</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </aside>
+            </div>
         </div>
         <div id="watermark">creado por CAYT</div>
     </div>
