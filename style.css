@@ -111,6 +111,7 @@ body {
     width: 100%;
     max-width: 720px;
     box-sizing: border-box;
+    margin-top: 50px;
 }
 
 .table-container {
