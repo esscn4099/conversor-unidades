@@ -1,34 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const CLAVE_ACCESO = "engie2025"; 
-
-    const loginContainer = document.getElementById('login-container');
-    const passwordInput = document.getElementById('password-input');
-    const loginBtn = document.getElementById('login-btn');
-    const errorMessage = document.getElementById('error-message');
-    const mainContent = document.getElementById('main-content');
-    
-    const handleLogin = () => {
-        if (passwordInput.value === CLAVE_ACCESO) {
-            loginContainer.classList.add('hidden');
-            mainContent.classList.remove('hidden');
-        } else {
-            errorMessage.classList.remove('hidden');
-            passwordInput.value = '';
-        }
-    };
-    
-    loginBtn.addEventListener('click', handleLogin);
-    
-    passwordInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            handleLogin();
-        }
-    });
-
     const calcularBtn = document.getElementById('calcular');
     const limpiarBtn = document.getElementById('limpiar');
-    const verLinksBtn = document.getElementById('ver_links'); // El botón "VER ENLACES QR"
-    const linksContainer = document.getElementById('links-container'); // El contenedor de los links
 
     const inputs = {
         densidad: document.getElementById('densidad'),
@@ -58,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const m3_gn_val = parseFloat(inputs.m3_gn.value);
         const mmbtu_val = parseFloat(inputs.mmbtu.value);
 
+        // Limpiar campos de salida antes de calcular
         limpiarCamposSalida();
 
         if (!isNaN(m3_gnl_val)) {
@@ -95,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        // Mostrar resultados
         if (isNaN(m3_gnl_val)) inputs.m3_gnl.value = formatNumber(valM3GNL);
         if (isNaN(kg_gnl_val)) inputs.kg_gnl.value = formatNumber(valKGGNL);
         if (isNaN(kg_gn_val)) inputs.kg_gn.value = formatNumber(valKGGN);
@@ -111,15 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const limpiarCamposSalida = () => {
+        // Esta función podría ser más sofisticada para limpiar solo los campos que no son de entrada
+        // Por ahora, se limpian todos los campos de valores variables.
         limpiar();
     };
 
     calcularBtn.addEventListener('click', calcular);
     limpiarBtn.addEventListener('click', limpiar);
-    
-    // Aquí está la funcionalidad corregida del botón "VER ENLACES QR"
-    verLinksBtn.addEventListener('click', () => {
-        linksContainer.classList.toggle('hidden');
-    });
 });
-
